@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>顾问团队</title>
+    @@include('head.html')
+</head>
+
+<body>
+    @@include('header.html')
+    <div class="team">
+        <div class="banner cover_box">
+            <img class="img" src="../../img/team_banner.png" alt="">
+        </div>
+        <div class="container">
+            <div class="list row">
+                <a href="" class="link li col-md-4 col-sm-6 col-xs-12 wow animate__fadeInUp" :data-wow-duration="(1/index+1) +'s'" data-wow-delay="0" v-for="(item,index) in 9" :key="" index>
+                    <div class="cover_box">
+                        <img class="img cover_img adipoli_img2" src="../../img/team1.png" alt="">
+                    </div>
+                    <div class="centent">
+                        <h3 class="title">小明</h3>
+                        <p class="lead over2">
+                            佛山市陶莹新型材料有限公司、陶莹实业（品牌“中扬
+                            新材”）于1988年始创于台湾。
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- 分页 -->
+            <div id="demo-laypage-normal-1" class="demo_page"></div>
+        </div>
+    </div>
+    @@include('footer.html')
+</body>
+<script>
+    new Vue({
+        el: '.team',
+        data() {
+            return {
+
+            }
+        }
+    })
+</script>
+</html>

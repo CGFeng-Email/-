@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>关于我们详情</title>
+    <link rel="stylesheet" href="../../css/lightGallery.css">
+    @@include('head.html')
+</head>
+
+<body>
+    @@include('header.html')
+    <div class="index about_us_details">
+        <div class="banner cover_box">
+            <img class="img" src="../../img/about_us_banner.png" alt="">
+        </div>
+        <div class="introduce container">
+            <h3 class="title title2 wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
+                致力于成为陶瓷行业最受尊重的材料技术企业</h3>
+            <p class="lead wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0">
+                佛山市陶莹新型材料有限公司、陶莹实业（品牌“中扬新材”）于1988年始创于台湾。是一家集研发、生产、销售、技术服务于一体的陶瓷釉料高新科技企业、佛山市国
+                家高新区领军企业、国家高新区制造业单打冠军企业、广东省“专精特新”企业、广东省知识产权示范企业。2019年6月，成功挂牌广东股权交易中心培育板-成长层，代
+                码892450。2021年11月，获得梅花创投数千万元天使轮融资，用于陶瓷新材料研发与产业规模拓展。2022年7月，与昆山星谊精密陶瓷成立合资子公司苏州佺和中谊新型
+                材料科技有限公司。
+            </p>
+            <p class="lead wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0">
+                公司的产品销售已逐渐实现全国化，目前有佛山生产基地、江西生产基地、四川生产基地、江苏昆山生产基地，为合作客户提供配套贴身服务，以便于就近提供产品、降
+                低运输成本，提高市场竞争力，更为有力和有效地拓展下游市场。 公司致力于成为行业最受尊重的釉料技术企业，坚持“联合创新价值经营”，通过技术与营销双轮驱动，
+                为客户提供从产品设计、到工艺、到设备、到釉料服务的一站式釉料技术解决方案。是国内釉面材料领域具有较强的技术能力和研发实力的企业之一
+            </p>
+        </div>
+        <!-- 公司价值 -->
+        <div class="company" style="background: url(../../img/company.png) no-repeat center center;">
+            <div class="container content">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 left_content wow slideInLeft" data-wow-duration="2s"
+                        data-wow-delay="0">
+                        <h2 class="title">公司价值</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-sm-8 col-md-8 right_content wow slideInRight" data-wow-duration="2s"
+                        data-wow-delay="0">
+                        <div class="row box">
+                            <div class="col-sm-6 col-md-6 col-xs-6">
+                                <div class="num">1921</div>
+                                <div class="name">始创于台湾</div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-6">
+                                <div class="num">29</div>
+                                <div class="name">公司</div>
+                            </div>
+                        </div>
+                        <div class="row box">
+                            <div class="col-sm-6 col-md-6 col-xs-6">
+                                <div class="num">1921</div>
+                                <div class="name">部门</div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-6">
+                                <div class="num">2000</div>
+                                <div class="name">员工</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mission">
+            <div class="head container">
+                <h3 class="title">公司使命：</h3>
+                <div class="list">
+                    <div class="li">
+                        <span class="text">创造陶瓷之美</span>
+                    </div>
+                    <div class="li">
+                        <span class="text">成就建陶未来</span>
+                    </div>
+                </div>
+                <!-- 手风琴 -->
+                <div class="ul" id="auto-loop">
+                    <div class="li lis_box wow animate__fadeInUp"  :data-wow-duration=" (1/index+1) +'s'" data-wow-delay="0" :data-src="'../../img/about_us' + (index + 1) + '.png'" v-for="(item,index) in 4" :key=""index>
+                        <img class="cover" :src="'../../img/about_us' + (index + 1) + '.png'" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('footer.html')
+    <script src="../../js/lightGallery.min.js"></script>
+</body>
+<script>
+    new Vue({
+        el: '.about_us_details',
+        data() {
+            return {
+
+            }
+        }
+    })
+
+    // 手风琴弹窗
+    $("#auto-loop").lightGallery({
+
+        loop: true,
+
+        auto: true,
+
+        pause: 4000
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>发展历程</title>
+    @@include('head.html')
+</head>
+
+<body>
+    @@include('header.html')
+    <div class="history">
+        <div class="banner cover_box">
+            <img class="img" src="../../img/history_banner.png" alt="">
+        </div>
+        <div class="main container">
+            <!-- banner -->
+            <div class="swiper-container history_swiper" ref="history_swiper_ref">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide row box_shadow box_radius" v-for="(item,index) in date_list" :key="" index>
+                        <div class="cover wow animate__slideInLeft col-xs-12 col-sm-6 col-md-6" data-wow-duration="1.2s" data-wow-delay="0">
+                            <img class="img box_shadow box_radius" src="../../img/index_product1.png" alt="">
+                        </div>
+                        <div class="center wow animate__slideInRight col-xs-12 col-sm-6 col-md-6" data-wow-duration="1.4s" data-wow-delay="0.5">
+                            <h3 class="title ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="1s"
+                                swiper-animate-delay="1s">{{item.time}}</h3>
+                            <p class="lead ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="1.2s"
+                                swiper-animate-delay="1.4s">
+                                {{item.content}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="date_list">
+                    <li class="li" :class="date_index == index ? 'active' : ''" v-for="(item,index) in date_list"
+                        :key="index" @click="swiperTo(index)">
+                        {{item.date}}
+                    </li>
+                </ul>
+                <div class="swiper-scrollbar" style="transition-duration: 400ms;">
+                    <div class="swiper-scrollbar-drag" style="transform: translate3d(0px, 0px, 0px); width: 135.667px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('footer.html')
+</body>
+<script>
+    new Vue({
+        el: '.history',
+        data() {
+            return {
+                date_list: [{
+                    date: '2023',
+                    time: '2023年7月',
+                    content: '2022年7月，与昆山星谊精密陶瓷成立合资子公司苏州佺和中谊新型材料科技有限公司。'
+                }, {
+                    date: '2022',
+                    time: '2022年7月',
+                    content: '2022年7月，与昆山星谊精密陶瓷成立合资子公司苏州佺和中谊新型材料科技有限公司。'
+                }, {
+                    date: '2021',
+                    time: '2021年6月',
+                    content: '2022年7月，与昆山星谊精密陶瓷成立合资子公司苏州佺和中谊新型材料科技有限公司。'
+                },
+                {
+                    date: '2020',
+                    time: '2020年6月',
+                    content: '2022年7月，与昆山星谊精密陶瓷成立合资子公司苏州佺和中谊新型材料科技有限公司。'
+                }],
+                date_index: 0
+            }
+        },
+        mounted() {
+            let that = this;
+            var history_swiper = new Swiper(".history_swiper", {
+                // autoplay: {
+                //     disableOnInteraction: false,
+                // },
+                speed: 600,
+                // loop: true,
+                on: {
+                    init: function () {
+                        swiperAnimateCache(this); //隐藏动画元素
+                        swiperAnimate(this); //初始化完成开始动画
+                    },
+                    slideChange: function () {
+                        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+                    },
+                    slideChangeTransitionEnd: function () {
+                        console.log(this.realIndex);
+                        that.date_index = this.realIndex
+                    }
+                },
+                // 滚动条
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: true,
+                },
+
+            });
+        },
+        methods: {
+            swiperTo(index) {
+                this.$refs.history_swiper_ref.swiper.slideTo(index, 1000, false)
+                this.date_index = index
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>顾问团队</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="copyright" content="">
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/adipoli.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="layui/css/layui.css">
+<link rel="stylesheet" href="font/iconfont.css">
+<link rel="stylesheet" href="vue/element-ui@2.15.14.css">
+<link rel="stylesheet" href="css/swiper4.5.3.min.css">
+<link rel="stylesheet" href="css/swipet-animate.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media.css">
+<script src="js/wow.min.js"></script>
+<script src="js/code.jquery.com_jquery-1.9.1.min.js"></script>
+<script src="js/jquery.adipoli.min.js"></script>
+<script src="layui/layui.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vue/vue@2.7.14.js"></script>
+<script src="vue/element-ui@2.15.14.js"></script>
+<script src="js/swiper.animate1.0.3.min.js"></script>
+<script src="js/swiper4.5.3.min.js"></script>
+<script>(function (w) { if (!("WebSocket" in w && 2 === w.WebSocket.CLOSING)) { var d = document.createElement("div"); d.className = "browsehappy"; d.innerHTML = '<div style="width:100%;height:30px;font-size:16px;line-height:30px;text-align:center;background-color:#fff3cd;color:#856404;margin-bottom:10px;">\u60a8\u5f53\u524d\u4f7f\u7528\u7684\u6d4f\u89c8\u5668\u7248\u672c\u8fc7\u4f4e<a target="_blank" href="http://browsehappy.osfipin.com/" style="background-color:#28a745;border-color: #28a745;text-decoration: none;padding: 2px 12px;margin-left: 10px;background-image: none;border: 1px solid transparent;border-radius: 4px;color:#fff;">\u7acb\u5373\u5347\u7ea7</a><div onclick="javascript:this.parentNode.parentNode.removeChild(this.parentNode)" style="position: relative;top: 7px;right: 7px;background:#ff1f29;display:inline-block;float: right;width: 16px;height: 16px;font-size:12px;color: #fff;line-height:16px;text-align: center;border-radius:50%;cursor: pointer;">&times;</div></div>'; var f = function () { var s = document.getElementsByTagName("body")[0]; if ("undefined" == typeof (s)) { setTimeout(f, 10) } else { s.insertBefore(d, s.firstChild) } }; f() } }(window));</script>
+</head>
+
+<body>
+    <div class="header" id="header">
+    <div class="head_content">
+        <div class="cover_box">
+            <a href="index.html"><img class="img logo" src="img/logo.png" alt=""></a>
+        </div>
+        <div class="right">
+            <div class="nav_box">
+                <div class="li active">
+                    <a class="link animate_fade" href="index.html">首页</a>
+                </div>
+                <div class="li">
+                    <a class="link animate_fade" href="product.html">产品中心</a>
+                </div>
+                <div class="li">
+                    <a class="link animate_fade" href="history.html">发展历程</a>
+                </div>
+                <div class="li">
+                    <a class="link animate_fade" href="companion.html">合作客户</a>
+                </div>
+                <div class="li">
+                    <a class="link animate_fade" href="press_center.html">新闻中心</a>
+                </div>
+                <div class="li">
+                    <a class="link animate_fade" href="contact_us.html">联系我们</a>
+                </div>
+            </div>
+            <div class="nav_menu">
+                <div class="language">
+                    <a class="link" href="javascript:;">
+                        <div class="cover_box">
+                            <img class="search" src="img/china.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="cover_box search_box">
+                    <i class="iconfont icon-sousuo"></i>
+                </div>
+            </div>
+        </div>
+        <div class="h5_menu">
+            <div class="lis"></div>
+            <div class="lis"></div>
+            <div class="lis"></div>
+        </div>
+    </div>
+</div>
+
+<div class="search_content box_shadow box_radius animate_fade">
+   <div class="search_close">
+        <i class="iconfont icon-guanbi"></i>
+   </div>
+    <form class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-input-group">
+                <input type="text" placeholder="请输入搜索内容" class="layui-input" lay-options="{split: true}"  lay-affix="search" lay-filter="search">
+            </div>
+        </div>
+    </form>
+</div>
+    <div class="team">
+        <div class="banner cover_box">
+            <img class="img" src="img/team_banner.png" alt="">
+        </div>
+        <div class="container">
+            <div class="list row">
+                <a href="" class="link li col-md-4 col-sm-6 col-xs-12 wow animate__fadeInUp" :data-wow-duration="(1/index+1) +'s'" data-wow-delay="0" v-for="(item,index) in 9" :key="" index>
+                    <div class="cover_box">
+                        <img class="img cover_img adipoli_img2" src="img/team1.png" alt="">
+                    </div>
+                    <div class="centent">
+                        <h3 class="title">小明</h3>
+                        <p class="lead over2">
+                            佛山市陶莹新型材料有限公司、陶莹实业（品牌“中扬
+                            新材”）于1988年始创于台湾。
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- 分页 -->
+            <div id="demo-laypage-normal-1" class="demo_page"></div>
+        </div>
+    </div>
+    <div class="footer">
+    <div class="container content">
+        <div class="row list">
+            <div class="item col-xs-12 col-sm-6 col-md-6">
+                <h1 class="logo wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay="0">
+                    <a href="index.html" class="logo_link">
+                        <img class="img box_radius box_shadow" src="img/logo.png" alt="">
+                    </a>
+                </h1>
+                <div class="lead wow animate__fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.5">
+                    佛山市陶莹新型材料有限公司、陶莹实业（品牌“中扬新材”）于1988年始创于台湾。
+                    是一家集研发、生产、销售、技术服务于一体的陶瓷釉料高新科技企业、佛山市国家高
+                    新区领军企业、国家高新区制造业单打冠军企业、广东省“专精特新”企业、广东省知
+                    识产权示范企业。
+                </div>
+                <ul class="ul">
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.8s">
+                        <a class="link" href="javascript:;">
+                            <img class="img" src="img/wx.png" alt="">
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                        <a class="link" href="javascript:;">
+                            <img class="img" src="img/wb.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item right_nav row col-xs-12 col-sm-6 col-md-6">
+                <ul class="nav col-xs-6 col-sm-6 col-md-6">
+                    <li class="li title wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
+                        快速导航
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                        <a href="index.html" class="link">
+                            首页
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.4s">
+                        <a href="product.html" class="link">
+                            产品中心
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.6s" data-wow-delay="0.6s">
+                        <a href="history.html" class="link">
+                            发展历程
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.8s">
+                        <a href="companion.html" class="link">
+                            合作客户
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                        <a href="press_center.html" class="link">
+                            新闻中心
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="2.2s" data-wow-delay="1.2s">
+                        <a href="contact_us.html" class="link">
+                            联系我们
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav col-xs-6 col-sm-6 col-md-6">
+                    <li class="li title wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
+                        关于我们
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                        <a href="about_us_details.html" class="link">
+                            公司简介
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.4s">
+                        <a href="team.html" class="link">
+                            顾问团队
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.6s" data-wow-delay="0.6s">
+                        <a href="history.html" class="link">
+                            发展历程
+                        </a>
+                    </li>
+                    <li class="li wow animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.8s">
+                        <a href="glory.html" class="link">
+                            企业荣耀
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <a href="javascript:;" class="link wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">Technical support filing number</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/common.js"></script>
+</body>
+<script>
+    new Vue({
+        el: '.team',
+        data() {
+            return {
+
+            }
+        }
+    })
+</script>
+</html>

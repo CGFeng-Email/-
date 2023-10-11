@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>产品中心</title>
+    @@include('head.html')
+</head>
+
+<body>
+    @@include('header.html')
+    <div class="index" id="index">
+        <div class="banner cover_box">
+            <img class="img" src="../../img/product_banner.png" alt="">
+        </div>
+        <!-- 我们的产品 -->
+        <div class="product">
+            <h2 class="title wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay="0">我们的产品</h2>
+            <div class="line wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="1s"></div>
+            <!-- banner -->
+            <div class="product_banner_content">
+                <div class="swiper-container product_banner">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide item_box wow animate__fadeInUp"
+                            :data-wow-duration="(Math.sqrt(0. + index)) == 0 ? 1 : (Math.sqrt(0. + index)) + 's'"
+                            data-wow-delay="0" v-for="(item,index) in 3" :key="index">
+                            <a class="link" href="../../product_details.html">
+                                <div class="cover_box box_radius box_shadow">
+                                    <img class="img adipoli_img1"
+                                        :src="'../../img/index_product' + (index + 1) + '.png'" alt="">
+                                </div>
+                                <div class="name">面釉</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('footer.html')
+</body>
+<script>
+    new Vue({
+        el: '#index',
+        data() {
+            return {
+
+            }
+        },
+        mounted() {
+            // 首页产品banner
+            var product_banner = new Swiper(".product_banner", {
+                autoplay: {
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    3000: {
+                        //当屏幕宽度小于等于1280
+                        slidesPerView: 3,
+                    },
+                    992: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        //当屏幕宽度小于等于768
+                        slidesPerView: 1,
+                    },
+                },
+                speed: 600,
+                loop: true,
+                on: {
+                    init: function () {
+                        swiperAnimateCache(this); //隐藏动画元素
+                        swiperAnimate(this); //初始化完成开始动画
+                    },
+                    slideChange: function () {
+                        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+                    },
+                },
+                // 如果需要分页器
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            });
+        }
+    })
+</script>
+
+</html>

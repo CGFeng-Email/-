@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>联系我们</title>
+    @@include('head.html')
+</head>
+
+<body>
+    @@include('header.html')
+    <div class="contact_us">
+        <div class="banner cover_box">
+            <img class="img" src="../../img/contact_us_banner.png" alt="">
+        </div>
+        <div class="container contact_us_main box_shadow box_radius">
+            <div class="row">
+                <div class="box box_left col-md-6 col-sm-12 col-xs-12">
+                    <ul class="ul">
+                        <li class="li row wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
+                            <div class="cover_box col-md-2 col-sm-4 col-xs-4">
+                                <img class="cover" src="../../img/contact_us_phone.png" alt="">
+                            </div>
+                            <div class="li_content col-md-10 col-sm-8 col-xs-8">
+                                <h4 class="name">联系电话</h4>
+                                <p class="explain">0757-82716606</p>
+                            </div>
+                        </li>
+                        <li class="li row wow animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0">
+                            <div class="cover_box col-md-2 col-sm-4 col-xs-4">
+                                <img class="cover" src="../../img/contact_us_email.png" alt="">
+                            </div>
+                            <div class="li_content col-md-10 col-sm-8 col-xs-8">
+                                <h4 class="name">邮箱</h4>
+                                <p class="explain">sales@fstaoying.cn</p>
+                            </div>
+                        </li>
+                        <li class="li row wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0">
+                            <div class="cover_box col-md-2 col-sm-4 col-xs-4">
+                                <img class="cover" src="../../img/contact_us_map.png" alt="">
+                            </div>
+                            <div class="li_content col-md-10 col-sm-8 col-xs-8">
+                                <h4 class="name">公司地址</h4>
+                                <p class="explain">广东省佛山市禅城区塱宝西路62号零壹科技园</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box box_right col-md-6 col-sm-12 col-xs-12">
+                    <h2 class="title wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">联系我们</h2>
+                    <div class="form_box">
+                        <form class="layui-form">
+                            <input type="text" name="title" required lay-verify="required" lay-verType="tips" lay-reqText="必填项不能为空"	 placeholder="姓名"
+                                autocomplete="off" class="layui-input input_li wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
+                            <input type="text" name="title" required lay-verify="required|email" lay-verType="tips" lay-reqText="必填项不能为空" placeholder="邮件"
+                                autocomplete="off" class="layui-input input_li wow animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0">
+                            <textarea name="desc" placeholder="留言" class="layui-textarea input_li wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0"></textarea>
+                            <button class="layui-btn submit_bnt layui-btn-radius wow animate__fadeInUp" data-wow-duration="2.5s" data-wow-delay="0" lay-submit lay-filter="contact_us_submit">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('footer.html')
+</body>
+<script>
+
+</script>
+
+</html>
