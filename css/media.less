@@ -20,23 +20,44 @@
                     background: rgb(0, 0, 0);
                     z-index: 10;
                     transition: all .6s ease;
-                    padding: 20px;
+                    padding: 100px 20px;
 
                     .li {
                         height: 44px;
                         line-height: 44px;
                         text-align: center;
+                        margin-bottom: 20px;
 
                         .link {
                             height: 44px;
                             line-height: 44px;
                             color: #fff;
                         }
+
+                        &::before {
+                            bottom: 0;
+                            width: 0;
+                        }
+
+                        &:hover::before {
+                            width: 20%;
+                        }
+
+                        &:hover {
+                            .link {
+                                color: #009DE0;
+                            }
+                        }
                     }
                 }
 
                 .active {
                     right: 0;
+                }
+
+                .active:before {
+                    bottom: 0;
+                    width: 20%;
                 }
 
                 .nav_menu {
@@ -153,9 +174,11 @@
 
         .index_banner {
             height: 550px;
+
             .swiper-slide {
                 .cover {
                     height: 100%;
+
                     .img {
                         height: 100%;
                     }

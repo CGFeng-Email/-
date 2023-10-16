@@ -15,6 +15,26 @@ $(".search_content .search_close").click(function () {
   $(".search_content").removeClass("search_content_active");
 });
 
+// 微信二维码弹窗
+$("#wx").hover(
+  function () {
+    $(this).children(".open_box").addClass("animate_fade active");
+  },
+  function () {
+    $(this).children(".open_box").removeClass("animate_fade active");
+  }
+);
+
+// 微博二维码弹窗
+$("#wb").hover(
+  function () {
+    $(this).children(".open_box").addClass("animate_fade active");
+  },
+  function () {
+    $(this).children(".open_box").removeClass("animate_fade active");
+  }
+);
+
 // 混动导航栏背景
 window.addEventListener("scroll", function (e) {
   var scrollTop =
@@ -81,4 +101,5 @@ $(function () {
     startEffect: "transparent",
     hoverEffect: "boxRandom",
   });
+
 });

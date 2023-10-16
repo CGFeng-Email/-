@@ -253,6 +253,7 @@ img {
                     background: #009DE0;
                     transition: .7s ease-in;
                 }
+
                 .active {
                     .link {
                         color: #009DE0 !important;
@@ -420,6 +421,26 @@ img {
 
             .li {
                 margin-right: 15px;
+                position: relative;
+
+                .open_box {
+                    display: none;
+                    position: absolute;
+                    top: -140px;
+                    left: 0;
+                    width: 120px;
+                    height: 130px;
+                    padding: 10px;
+                    background: #F9F9F9;
+
+                    .text {
+                        text-align: center;
+                    }
+                }
+
+                .active {
+                    display: block;
+                }
             }
         }
 
@@ -450,6 +471,15 @@ img {
                         transform: translateX(4px);
                         text-decoration: revert;
                     }
+                }
+
+            }
+
+            .active {
+                .link {
+                    background: none;
+                    color: #009DE0;
+                    text-decoration: revert;
                 }
             }
         }

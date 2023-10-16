@@ -5,23 +5,9 @@
         </div>
         <div class="right">
             <div class="nav_box">
-                <div class="li active">
-                    <a class="link animate_fade" href="../../index.html">首页</a>
-                </div>
-                <div class="li">
-                    <a class="link animate_fade" href="../../product.html">产品中心</a>
-                </div>
-                <div class="li">
-                    <a class="link animate_fade" href="../../history.html">发展历程</a>
-                </div>
-                <div class="li">
-                    <a class="link animate_fade" href="../../companion.html">合作客户</a>
-                </div>
-                <div class="li">
-                    <a class="link animate_fade" href="../../press_center.html">新闻中心</a>
-                </div>
-                <div class="li">
-                    <a class="link animate_fade" href="../../contact_us.html">联系我们</a>
+                <div class="li" :class="index == nav_index ? 'active' : ''" id="nav_index" :data-id="index"
+                    v-for="(item,index) in nav_list" :key="index" @click="navChange(index)">
+                    <a class="link animate_fade" :href="item.url">{{item.name}}</a>
                 </div>
             </div>
             <div class="nav_menu">
@@ -46,14 +32,61 @@
 </div>
 
 <div class="search_content box_shadow box_radius animate_fade">
-   <div class="search_close">
+    <div class="search_close">
         <i class="iconfont icon-guanbi"></i>
-   </div>
+    </div>
     <form class="layui-form">
         <div class="layui-form-item">
             <div class="layui-input-group">
-                <input type="text" placeholder="请输入搜索内容" class="layui-input" lay-options="{split: true}"  lay-affix="search" lay-filter="search">
+                <input type="text" placeholder="请输入搜索内容" class="layui-input" lay-options="{split: true}"
+                    lay-affix="search" lay-filter="search">
             </div>
         </div>
     </form>
 </div>
+
+<script>
+    new Vue({
+        el: '#header',
+        data() {
+            return {
+                nav_index: window.sessionStorage.getItem('navid') || 0,
+                nav_list: [
+                    {
+                        url: '../../index.html',
+                        name: '首页'
+                    },
+                    {
+                        url: '../../product.html',
+                        name: '产品中心'
+                    },
+                    {
+                        url: '../../history.html',
+                        name: '发展历程'
+                    },
+                    {
+                        url: '../../companion.html',
+                        name: '合作客户'
+                    },
+                    {
+                        url: '../../press_center.html',
+                        name: '新闻中心'
+                    },
+                    {
+                        url: '../../contact_us.html',
+                        name: '联系我们'
+                    }
+                ]
+            }
+        },
+        created() {
+
+        },
+        methods: {
+            navChange(index) {
+                window.sessionStorage.setItem('navid', index);
+                window.sessionStorage.setItem('about_us_id', -1);
+            }
+        }
+    })
+</script>

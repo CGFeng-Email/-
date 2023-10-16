@@ -323,6 +323,23 @@ img {
 }
 .footer .content .ul .li {
   margin-right: 15px;
+  position: relative;
+}
+.footer .content .ul .li .open_box {
+  display: none;
+  position: absolute;
+  top: -140px;
+  left: 0;
+  width: 120px;
+  height: 130px;
+  padding: 10px;
+  background: #F9F9F9;
+}
+.footer .content .ul .li .open_box .text {
+  text-align: center;
+}
+.footer .content .ul .li .active {
+  display: block;
 }
 .footer .content .right_nav {
   padding-left: 30px;
@@ -348,6 +365,11 @@ img {
   background: none;
   color: #009DE0;
   transform: translateX(4px);
+  text-decoration: revert;
+}
+.footer .content .right_nav .active .link {
+  background: none;
+  color: #009DE0;
   text-decoration: revert;
 }
 .footer .copyright {

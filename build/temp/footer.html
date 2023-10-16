@@ -14,15 +14,27 @@
                     识产权示范企业。
                 </div>
                 <ul class="ul">
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.8s">
+                    <li class="li wow animate__fadeInUp" id="wx" data-wow-duration="1.8s" data-wow-delay="0.8s">
                         <a class="link" href="javascript:;">
                             <img class="img" src="../../img/wx.png" alt="">
                         </a>
+                        <div class="open_box box_radius box_shadow">
+                            <div class="cover_box">
+                                <img class="cover" src="../../img/code.png" alt="">
+                            </div>
+                            <p class="text">微信扫一扫</p>
+                        </div>
                     </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                    <li class="li wow animate__fadeInUp" id="wb" data-wow-duration="2s" data-wow-delay="1s">
                         <a class="link" href="javascript:;">
                             <img class="img" src="../../img/wb.png" alt="">
                         </a>
+                        <div class="open_box box_radius box_shadow">
+                            <div class="cover_box">
+                                <img class="cover" src="../../img/code.png" alt="">
+                            </div>
+                            <p class="text">微博扫一扫</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -31,34 +43,9 @@
                     <li class="li title wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
                         快速导航
                     </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.2s">
-                        <a href="../../index.html" class="link">
-                            首页
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.4s">
-                        <a href="../../product.html" class="link">
-                            产品中心
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.6s" data-wow-delay="0.6s">
-                        <a href="../../history.html" class="link">
-                            发展历程
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.8s">
-                        <a href="../../companion.html" class="link">
-                            合作客户
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
-                        <a href="../../press_center.html" class="link">
-                            新闻中心
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="2.2s" data-wow-delay="1.2s">
-                        <a href="../../contact_us.html" class="link">
-                            联系我们
+                    <li class="li wow animate__fadeInUp" :class="index == nav_index ? 'active' : ''" :data-wow-duration="item.duration + 's'" :data-wow-delay="item.delay + 's'"  v-for="(item,index) in nav_list" :key="index" @click="navChange(index)">
+                        <a :href="item.url" class="link">
+                            {{item.name}}
                         </a>
                     </li>
                 </ul>
@@ -66,24 +53,9 @@
                     <li class="li title wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0">
                         关于我们
                     </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.2s">
-                        <a href="../../about_us_details.html" class="link">
-                            公司简介
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.4s">
-                        <a href="../../team.html" class="link">
-                            顾问团队
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.6s" data-wow-delay="0.6s">
-                        <a href="../../history.html" class="link">
-                            发展历程
-                        </a>
-                    </li>
-                    <li class="li wow animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.8s">
-                        <a href="../../glory.html" class="link">
-                            企业荣耀
+                    <li class="li wow animate__fadeInUp" :class="index == about_us_index ? 'active' : ''" :data-wow-duration="item.duration + 's'" :data-wow-delay="item.delay + 's'" v-for="(item,index) in abuot_us_list" :key="index" @click="about_us_change(index)">
+                        <a :href="item.url" class="link">
+                            {{item.name}}
                         </a>
                     </li>
                 </ul>
@@ -92,9 +64,89 @@
     </div>
     <div class="copyright">
         <div class="container">
-            <a href="javascript:;" class="link wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">Technical support filing number</a>
+            <a href="javascript:;" class="link wow animate__fadeInUp" data-wow-duration="1s"
+                data-wow-delay="0.4s">Technical support filing number</a>
         </div>
     </div>
 </div>
+<script>
+    new Vue({
+        el: '.footer',
+        data() {
+            return {
+                nav_index: window.sessionStorage.getItem('navid') || 0,
+                nav_list: [
+                    {
+                        url: '../../index.html',
+                        name: '首页',
+                        duration: 1.2,
+                        delay: 0.2
+                    },
+                    {
+                        url: '../../product.html',
+                        name: '产品中心',
+                        duration: 1.4,
+                        delay: 0.4
+                    },
+                    {
+                        url: '../../history.html',
+                        name: '发展历程',
+                        duration: 1.6,
+                        delay: 0.6
+                    },
+                    {
+                        url: '../../companion.html',
+                        name: '合作客户',
+                        duration: 1.8,
+                        delay: 0.8
+                    },
+                    {
+                        url: '../../press_center.html',
+                        name: '新闻中心',
+                        duration: 2,
+                        delay: 1
+                    },
+                    {
+                        url: '../../contact_us.html',
+                        name: '联系我们',
+                        duration: 2.2,
+                        delay: 1.2
+                    }
+                ],
+                abuot_us_list: [
+                    {
+                        url: '../../about_us_details.html',
+                        name: '公司简介',
+                        duration: 1.2,
+                        delay: 0.2
+                    },
+                    {
+                        url: '../../team.html',
+                        name: '顾问团队',
+                        duration: 1.4,
+                        delay: 0.4
+                    },
+                    {
+                        url: '../../glory.html',
+                        name: '企业荣耀',
+                        duration: 1.6,
+                        delay: 0.6
+                    }
+                ],
+                about_us_index: window.sessionStorage.getItem('about_us_id')
+            }
+        },
+        methods: {
+            navChange(index) {
+                window.sessionStorage.setItem('navid', index);
+                window.sessionStorage.setItem('about_us_id', -1);
 
+            },
+            about_us_change(index) {
+                window.sessionStorage.setItem('about_us_id', index);
+                window.sessionStorage.setItem('navid', -1);
+            }
+        }
+    })
+</script>
 <script src="../../js/common.js"></script>
